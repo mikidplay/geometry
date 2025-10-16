@@ -6,12 +6,20 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Energy of Geometry — Video Lectures</title>
-  <meta name="description" content="Watch Energy of Geometry lectures. A fast, single-page gallery of all videos." />
-  <meta property="og:title" content="Energy of Geometry — Video Lectures" />
-  <meta property="og:description" content="A single, fast page listing all videos with thumbnails." />
+  <title>Energy of Geometry — Geometry &amp; Frequencies for Calm, Clarity, and Abundance</title>
+  <meta name="description" content="Minimal geometric visuals harmonized with 888Hz, 963Hz, 40Hz and more — crafted for meditation, emotional balance, and focused brainwork." />
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.energyofgeometry.com/">
+
+  <!-- Open Graph / Twitter cards -->
+  <meta property="og:title" content="Energy of Geometry — Geometry &amp; Frequencies for Calm, Clarity, and Abundance" />
+  <meta property="og:description" content="Minimal geometric visuals harmonized with 888Hz, 963Hz, 40Hz and more — crafted for meditation, emotional balance, and focused brainwork." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.energyofgeometry.com/" />
+  <meta property="og:image" content="https://www.energyofgeometry.com/assets/og/cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="google-adsense-account" content="ca-pub-6650285488588170">
+  <meta name="theme-color" content="#0b0d12">
 
   <link rel="preconnect" href="https://www.googleapis.com" />
   <link rel="preconnect" href="https://i.ytimg.com" />
@@ -22,7 +30,7 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#0b0d12; color:#f4f6f8; }
     header { max-width: var(--maxw); margin: 28px auto 12px; padding: 0 16px; }
-    header h1 { margin: 0 0 6px; font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+    header h1 { margin: 0 0 6px; font-size: clamp(1.6rem, 2.5vw, 2rem); }
     header p { margin: 0; opacity: .85; }
 
     .controls { max-width: var(--maxw); margin: 12px auto 12px; padding: 0 16px; display: flex; gap: 10px; align-items: center; }
@@ -67,12 +75,12 @@
 </head>
 <body>
   <header>
-    <h1>Energy of Geometry</h1>
-    <p>Click any thumbnail to play in-place.</p>
+    <h1>Geometry &amp; Frequencies for Calm, Clarity, and Abundance</h1>
+    <p>Minimal geometric visuals harmonized with 888Hz, 963Hz, 40Hz, and more — crafted for meditation, emotional balance, and focused brainwork.</p>
   </header>
 
   <!-- Top banner -->
-  <div class="ad-top">
+  <div class="ad-top" aria-label="Advertisement">
     <ins class="adsbygoogle"
          style="display:block; text-align:center;"
          data-ad-client="ca-pub-6650285488588170"
@@ -89,13 +97,13 @@
     <div id="count" aria-live="polite"></div>
   </div>
 
-  <!-- WRAPPED: main grid + right sidebar (new) -->
+  <!-- WRAPPED: main grid + right sidebar (kept) -->
   <div class="page-wrap">
-    <!-- Main grid (unchanged) -->
+    <!-- Main grid -->
     <main class="grid" id="grid" aria-live="polite"></main>
 
     <!-- Right sidebar ad -->
-    <aside class="sidebar">
+    <aside class="sidebar" aria-label="Advertisement">
       <div class="ad-box">
         <ins class="adsbygoogle"
              style="display:block"
@@ -112,7 +120,7 @@
   <div id="status" class="loading" role="status">Loading videos…</div>
 
   <footer>
-    © <span id="year"></span> Energy of Geometry. All videos hosted on YouTube.
+    © <span id="year"></span> Energy of Geometry. All videos hosted on YouTube. This website offers well‑being practices and makes no medical claims.
   </footer>
 
   <!-- Modal player -->
@@ -122,6 +130,38 @@
       <iframe id="player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </dialog>
+
+  <!-- ======= Structured data (static) ======= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Energy of Geometry",
+    "url": "https://www.energyofgeometry.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.energyofgeometry.com/?q={query}",
+      "query-input": "required name=query"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Energy of Geometry",
+    "url": "https://www.energyofgeometry.com",
+    "logo": "https://www.energyofgeometry.com/assets/logo.png",
+    "sameAs": [
+      "https://www.youtube.com/channel/UCZG76bvfaiRuNzHNeUSappQ"
+    ]
+  }
+  </script>
+
+  <noscript>
+    <p>JavaScript is off. Browse our channel on YouTube:</p>
+    <p><a href="https://www.youtube.com/channel/UCZG76bvfaiRuNzHNeUSappQ" rel="external">Energy of Geometry — YouTube</a></p>
+  </noscript>
 
   <script>
     // === Configuration ===
@@ -197,13 +237,47 @@
           "aria-label": `Play: ${v.title}`,
           onClick: (e) => { e.preventDefault(); openModal(v.id); }
         },
-          h("img", { class: "thumb", loading: "lazy", alt: v.title, referrerpolicy: "strict-origin-when-cross-origin", src: v.thumb }),
+          h("img", {
+            class: "thumb",
+            loading: "lazy",
+            alt: v.title,
+            referrerpolicy: "strict-origin-when-cross-origin",
+            src: v.thumb,
+            width: "480",
+            height: "270"
+          }),
           h("div", { class: "play" }, "▶ Play"),
           h("div", { class: "title" }, v.title)
         );
         grid.appendChild(a);
       });
       count.textContent = `${fmt(videos.length)} video(s)`;
+
+      // ===== Inject ItemList + VideoObject JSON-LD (dynamic) =====
+      const itemList = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": videos.slice(0, 50).map((v, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "item": {
+            "@type": "VideoObject",
+            "name": v.title,
+            "description": v.title,
+            "thumbnailUrl": [v.thumb],
+            "uploadDate": v.publishedAt,
+            "embedUrl": "https://www.youtube.com/embed/" + v.id,
+            "url": "https://www.youtube.com/watch?v=" + v.id
+          }
+        }))
+      };
+      const old = document.getElementById("ld-itemlist");
+      if (old) old.remove();
+      const s = document.createElement("script");
+      s.id = "ld-itemlist";
+      s.type = "application/ld+json";
+      s.text = JSON.stringify(itemList);
+      document.head.appendChild(s);
     }
 
     // === Modal player ===
