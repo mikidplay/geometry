@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650285488588170"
-     crossorigin="anonymous"></script>
+  <!-- AdSense global snippet (keep single copy only) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650285488588170" crossorigin="anonymous"></script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Energy of Geometry — Video Lectures</title>
@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://www.googleapis.com" />
   <link rel="preconnect" href="https://i.ytimg.com" />
   <link rel="preconnect" href="https://www.youtube.com" />
+
   <style>
     :root { --maxw: 1200px; --gap: 14px; }
     * { box-sizing: border-box; }
@@ -23,18 +24,22 @@
     header { max-width: var(--maxw); margin: 28px auto 12px; padding: 0 16px; }
     header h1 { margin: 0 0 6px; font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
     header p { margin: 0; opacity: .85; }
+
     .controls { max-width: var(--maxw); margin: 12px auto 12px; padding: 0 16px; display: flex; gap: 10px; align-items: center; }
     .controls input[type="search"] { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid #2a3142; background:#111624; color:#e9edf2; }
-    .grid { max-width: var(--maxw); margin: 12px auto 40px; padding: 0 16px;
+
+    .grid { width: 100%; margin: 0; padding: 0;
             display:grid; gap:var(--gap); grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
     .card { position: relative; border-radius: 10px; overflow: hidden; background: #141823; text-decoration: none; color: inherit; }
     .thumb { aspect-ratio: 16/9; width: 100%; display: block; object-fit: cover; background: #0f1320; }
     .title { padding: 10px 12px; font-size: .95rem; line-height: 1.3; color:#e9edf2; min-height: 2.6em; }
     .play { position:absolute; inset:auto 10px 10px auto; background:rgba(0,0,0,.55); padding:6px 10px; border-radius:999px; font-size:.85rem;}
     a.card:focus-visible { outline: 3px solid #8ab4f8; outline-offset: 2px; }
+
     footer { max-width: var(--maxw); margin: 0 auto 40px; padding: 0 16px; opacity: .8; font-size: .9rem; }
     .loading { max-width: var(--maxw); margin: 20px auto; padding: 0 16px; opacity: .85; }
     .error { color: #ffb4b4; }
+
     /* Modal */
     dialog { border: none; padding: 0; border-radius: 12px; width: min(960px, 95vw); background: #000; }
     dialog::backdrop { background: rgba(0,0,0,.65); }
@@ -42,39 +47,67 @@
     .close-btn { position: absolute; top: 8px; right: 8px; z-index: 2; background: rgba(0,0,0,.6); color: #fff; border: 0; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
     iframe { width: 100%; height: 100%; border: 0; }
 
-       /* 상단 배너 컨테이너 */
-.ad-top { max-width: 1200px; margin: 8px auto 0; padding: 0 16px; }
+    /* Top banner container */
+    .ad-top { max-width: 1200px; margin: 8px auto 0; padding: 0 16px; }
 
+    /* Main + right 320px sidebar layout */
+    .page-wrap{
+      max-width:1200px; margin:12px auto 40px; padding:0 16px;
+      display:grid; grid-template-columns:1fr 320px; gap:16px;
+    }
+    .sidebar{ position:sticky; top:12px; align-self:start; }
+    .sidebar .ad-box{ background:#141823; border-radius:10px; padding:10px; }
+
+    /* On mobile, hide sidebar and use single column */
+    @media (max-width:1024px){
+      .page-wrap{ grid-template-columns:1fr; }
+      .sidebar{ display:none; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Energy of Geometry</h1>
-    <p>Click any thumbnail to play in-place. </p>
-    
-
+    <p>Click any thumbnail to play in-place.</p>
   </header>
 
-     <!-- 상단 배너 -->
-<div class="ad-top">
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-client="ca-pub-6650285488588170"
-       data-ad-slot="2979940647"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+  <!-- Top banner -->
+  <div class="ad-top">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-6650285488588170"
+         data-ad-slot="2979940647"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by title…" aria-label="Filter videos by title" />
     <div id="count" aria-live="polite"></div>
   </div>
 
-  <main class="grid" id="grid" aria-live="polite"></main>
+  <!-- WRAPPED: main grid + right sidebar (new) -->
+  <div class="page-wrap">
+    <!-- Main grid (unchanged) -->
+    <main class="grid" id="grid" aria-live="polite"></main>
+
+    <!-- Right sidebar ad -->
+    <aside class="sidebar">
+      <div class="ad-box">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6650285488588170"
+             data-ad-slot="9573269152"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </aside>
+  </div>
+  <!-- /page-wrap -->
 
   <div id="status" class="loading" role="status">Loading videos…</div>
 
@@ -92,9 +125,9 @@
 
   <script>
     // === Configuration ===
-    const CHANNEL_ID = "UCZG76bvfaiRuNzHNeUSappQ"; // Your channel id
-    const API_KEY = "AIzaSyAd9kaxh8Bd1jRLR8CGqySsGcjxB2cE0oM"; // Your API key
-    const MAX_RESULTS_PER_PAGE = 50; // YouTube API maximum
+    const CHANNEL_ID = "UCZG76bvfaiRuNzHNeUSappQ";
+    const API_KEY = "AIzaSyAd9kaxh8Bd1jRLR8CGqySsGcjxB2cE0oM";
+    const MAX_RESULTS_PER_PAGE = 50;
 
     // === Helpers ===
     const $ = (sel) => document.querySelector(sel);
