@@ -1,0 +1,16 @@
+---
+layout: default
+title: Blog
+---
+<h1>Geometry Notes & Updates</h1>
+<p>영상 노트, 공지, 업데이트 등을 정리합니다.</p>
+
+<ul style="list-style:none; padding:0;">
+{% for post in site.posts %}
+  <li style="margin: 16px 0;">
+    <a href="{{ post.url | relative_url }}" style="font-weight:600;">{{ post.title }}</a>
+    <small style="opacity:.7"> — {{ post.date | date: "%Y-%m-%d" }}</small>
+    {% if post.description %}<div>{{ post.description }}</div>{% endif %}
+  </li>
+{% endfor %}
+</ul>
