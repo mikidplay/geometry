@@ -1,0 +1,8 @@
+title: Energy of Geometry
+url: https://www.energyofgeometry.com
+baseurl: ""
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
