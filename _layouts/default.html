@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body style="max-width: 900px; margin: 24px auto; padding: 0 16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;">
+  <header style="display:flex; gap:16px; align-items:center; margin: 8px 0 24px;">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer style="margin: 40px 0; opacity:.7;">
+    © {{ site.time | date: '%Y' }} Energy of Geometry
+  </footer>
+</body>
+</html>
